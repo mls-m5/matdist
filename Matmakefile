@@ -9,6 +9,21 @@ flags +=
    -Wextra
    -fmodules-ts
 
+dir = build
 
-matdist.src += src/*.cpp
-matdist.dir = build
+includes +=
+   src/
+
+distlib.src += src/*.cpp
+distlib.out = static distlib
+
+# =========== Main ===================================
+
+matdist.src += src/main/*.cpp
+matdist.link += distlib
+
+# ============ tests =================================
+src = test/%.cpp
+link = distlib
+
+localcompiler_test.out = %

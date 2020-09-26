@@ -9,6 +9,7 @@ struct RemoteCompiler : public ICompiler {
     }
 
     std::string compile(std::vector<std::string> args) override {
+        (void)args;
 
         // Pipe to other computer
 

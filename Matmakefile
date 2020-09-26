@@ -1,0 +1,14 @@
+
+cpp = clang++
+
+config +=
+   c++2a
+
+flags +=
+   -Wall
+   -Wextra
+   -fmodules-ts
+
+
+matdist.src += src/*.cpp
+matdist.dir = build

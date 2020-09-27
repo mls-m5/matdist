@@ -12,7 +12,7 @@ struct LocalCompiler : ICompiler {
 
     std::string compile(std::vector<std::string> arguments) override {
         environment->run(compilerName, arguments);
-        return 0;
+        return {};
     }
 
     std::string compilerName;

@@ -23,7 +23,12 @@ matdist.src += src/main/*.cpp
 matdist.link += distlib
 
 # ============ tests =================================
+
 src = test/%.cpp
 link = distlib
+dir = build/test
+includes += test
+
+define += DO_NOT_CATCH_ERRORS
 
 localcompiler_test.out = %

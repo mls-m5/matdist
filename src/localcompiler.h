@@ -1,9 +1,9 @@
 #pragma once
 
-#import "icompiler.h"
-#import "ienvironment.h"
-#import <memory>
-#import <string>
+#include "icompiler.h"
+#include "ienvironment.h"
+#include <memory>
+#include <string>
 
 std::unique_ptr<ICompiler> createLocalCompiler(
     std::string compiler, std::shared_ptr<IEnvironment> environment);

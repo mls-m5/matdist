@@ -1,7 +1,7 @@
 #pragma once
 
-#import "ienvironment.h"
-#import <mls-unit-test/mock.h>
+#include "ienvironment.h"
+#include <mls-unit-test/mock.h>
 
 class MockEnvironment : public IEnvironment {
 public:

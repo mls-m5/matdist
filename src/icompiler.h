@@ -1,7 +1,7 @@
 #pragma once
 
-#import <string>
-#import <vector>
+#include <string>
+#include <vector>
 
 class ICompiler {
 public:

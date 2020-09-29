@@ -1,7 +1,7 @@
 #pragma once
 
-#import <string>
-#import <vector>
+#include <string>
+#include <vector>
 
 //! Where to do everything, this is separated mostly for testing
 class IEnvironment {

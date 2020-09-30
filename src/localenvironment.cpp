@@ -17,9 +17,10 @@ std::string concatArguments(std::vector<std::string> args) {
 
 struct StandardEnvironment : public IEnvironment {
     int run(std::string program, std::vector<std::string> args) override {
-        //        return system((program + concatArguments(args)).c_str());
-        std::cout << "should have run: " + program + concatArguments(args)
-                  << "\n";
+        return system((program + concatArguments(args)).c_str());
+        //        std::cout << "should have run: " + program +
+        //        concatArguments(args)
+        //                  << "\n";
 
         return 0;
     }

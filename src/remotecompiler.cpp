@@ -4,6 +4,8 @@
 
 namespace {
 
+//! The remote compiler is a interface for a connection to another network or a
+//! collection of other computers
 struct RemoteCompiler : public ICompiler {
     RemoteCompiler(std::string compilerName) : compilerName(compilerName) {
     }

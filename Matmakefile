@@ -32,3 +32,6 @@ includes += test
 define += DO_NOT_CATCH_ERRORS
 
 localcompiler_test.out = %
+file_tools_test.out = %
+stream_compiler_test.out = %
+arg_tools_test.out = %

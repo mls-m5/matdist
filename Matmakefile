@@ -1,37 +1,58 @@
 
-cpp = clang++
 
-config +=
-   c++2a
-
-flags +=
-   -Wall
-   -Wextra
-   -fmodules-ts
-
-dir = build
-
-includes +=
-   src/
-
-distlib.src += src/*.cpp
-distlib.out = static distlib
+distlib
+  src = src/*.cpp
+  out = distlib
+  command = [static]
 
 # =========== Main ===================================
 
-matdist.src += src/main/*.cpp
-matdist.link += distlib
+matdist
+  in = @distlib
+  src = src/main/*.cpp
+  command = [exe]
+  out = matdist
 
 # ============ tests =================================
 
-src = test/%.cpp
-link = distlib
-dir = build/test
-includes += test
+localcompiler_test
+  src = test/localcompiler_test.cpp
+  in = @distlib
+  out = localcompiler_test
+  command = [test]
 
-define += DO_NOT_CATCH_ERRORS
+file_tools_test
+  src = test/file_tools_test.cpp
+  in = @distlib
+  out = file_tools_test
+  command = [test]
 
-localcompiler_test.out = %
-file_tools_test.out = %
-stream_compiler_test.out = %
-arg_tools_test.out = %
+stream_compiler_test
+  src = test/stream_compiler_test.cpp
+  in = @distlib
+  out = stream_compiler_test
+  command = [test]
+
+arg_tools_test
+  src = test/arg_tools_test.cpp
+  in = @distlib
+  out = arg_tools_test
+  command = [test]
+
+# =========== Root rule ===============================
+
+all
+  flags =
+    -Wall
+    -Wextra
+  in =
+    @matdist
+    @localcompiler_test
+    @file_tools_test
+    @stream_compiler_test
+    @arg_tools_test
+  includes =
+    src
+    test
+  config =
+    c++20
